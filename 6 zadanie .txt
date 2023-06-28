@@ -1,0 +1,37 @@
+--1.Выбрать записи с различными значениями выбраннего поля
+SELECT DISTINCT date_zakaza FROM zakaz
+
+--2.Выбрать все записи одной из таблиц
+SELECT * FROM zakaz
+
+--3.Кол-во записей в табллицах
+SELECT COUNT(*) AS Кол_возаписей FROM Client 
+SELECT COUNT(*) AS Кол_возаписей FROM zakaz
+
+--4.Выбрать записи в соответствии с логическими условиями сравнения для числовых полей
+SELECT * FROM Client WHERE id >3 AND id <7;
+
+--5.Выбрать записи из множества значений
+SELECT * FROM Client WHERE id IN(1,2,3,4,5)
+
+
+--6.Выбрать записи в соответствии с шаблоном значений определенного поля
+SELECT * FROM Client WHERE name_client LIKE '%ой%'
+
+--7.Выбрать записи с пустыми значениями некоторых полей
+SELECT * FROM Client WHERE name_client IS NULL;
+
+--8.Выбрать записи из определённого диапазона значений
+SELECT * FROM Client WHERE age_client BETWEEN 5 AND 20
+
+--9.Выбрать записи и применить, функции для работы со строковыми, числовыми полями, с датами
+
+
+--10.Выбрать записи и вывести вычисляемые выражения с псевдонимом
+SELECT age_client,id_zakaza, age_client + id_zakaza AS Результат FROM Client
+
+
+--11.Составить запрос с группировкой
+SELECT id_zakaza, COUNT(*) as total_clients
+FROM Client
+GROUP BY id_zakaza;

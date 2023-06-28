@@ -1,0 +1,9 @@
+CREATE TABLE Client(id int primary key identity(1,1) not null,
+name_client varchar(50) not null,
+age_client int not null,
+id_zakaza int not null,)
+
+CREATE TABLE zakaz(id_zakaza int primary key identity(1,1) not null,
+id_clienta int not null,
+name_zakaza varchar(50) not null,
+date_zakaza date not null)

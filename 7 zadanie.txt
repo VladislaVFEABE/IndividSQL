@@ -1,0 +1,33 @@
+--Запрос с использованием оператора JOIN для получения информации о клиентах и их заказах:
+SELECT C.name_client, Z.name_zakaza
+FROM Client C
+JOIN zakaz Z ON C.id_zakaza = Z.id_zakaza;
+
+--Запрос с использованием оператора EXCEPT для получения клиентов, которые не сделали ни одного заказа:
+SELECT name_client
+FROM Client
+EXCEPT
+SELECT C.name_client
+FROM Client C
+JOIN zakaz Z ON C.id_zakaza = Z.id_zakaza;
+
+--Запрос с использованием оператора UNION для объединения и вывода уникальных значений клиентов и заказов:
+SELECT name_client AS name
+FROM Client
+UNION
+SELECT name_zakaza AS name
+FROM zakaz;
+
+--Запрос с использованием оператора JOIN для получения информации о клиентах и дате их заказов:
+SELECT C.name_client, Z.date_zakaza
+FROM Client C
+JOIN zakaz Z ON C.id_zakaza = Z.id_zakaza;
+
+--Запрос с использованием оператора EXCEPT для получения клиентов, которые сделали заказы, но их возраст меньше 18 лет:
+SELECT name_client
+FROM Client
+EXCEPT
+SELECT C.name_client
+FROM Client C
+JOIN zakaz Z ON C.id_zakaza = Z.id_zakaza
+WHERE C.age_client < 18;

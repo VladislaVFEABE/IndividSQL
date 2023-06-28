@@ -1,0 +1,7 @@
+UPDATE Client SET name_client='Репида' WHERE name_client = 'Bob'
+UPDATE Client SET name_client='Яцко', age_client = 8 WHERE id = 4
+UPDATE Client SET age_client = age_client*1.2
+
+UPDATE zakaz SET id_clienta=2 WHERE id_clienta = 1
+UPDATE zakaz SET id_clienta=3,name_zakaza='car' WHERE id_zakaza = 2
+UPDATE zakaz SET id_clienta = id_clienta*1.2

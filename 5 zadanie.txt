@@ -1,0 +1,4 @@
+DELETE FROM zakaz WHERE id_zakaza = 15
+DELETE FROM zakaz WHERE id_zakaza BETWEEN 8 AND 9
+DELETE FROM Client WHERE name_client = 'Яцко'
+DELETE FROM Client WHERE id BETWEEN  5 AND 6
